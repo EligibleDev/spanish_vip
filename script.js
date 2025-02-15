@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const classType = document.getElementById("classType");
     const featuresContainer = document.getElementById("features");
     const aboutTitle = document.getElementById("aboutTitle");
+    const aboutDesc = document.getElementById("aboutDesc");
 
     function updateFeatures() {
         let features = [
@@ -31,15 +32,25 @@ document.addEventListener("DOMContentLoaded", function () {
             .join("");
     }
 
-    function updateTitle() {
+    function updateAboutTitle() {
         aboutTitle.innerText = `About ${
             classType.value === "group-classes" ? "group classes" : "private tutoring"
         }:`;
     }
 
-    classType.addEventListener("change", updateTitle);
+    function updateAboutDesc() {
+        aboutDesc.innerText = `${
+            classType.value === "group-classes"
+                ? "Fun and supportive classes up to 10 students. Available 7am-9pm COT (Mon-Fri). Students 18+ only."
+                : "Fun and effective tutoring that adapts as you learn. Get fast results with one-on-one attention. Students 18+ only."
+        }`;
+    }
+
+    classType.addEventListener("change", updateAboutTitle);
+    classType.addEventListener("change", updateAboutDesc);
     classType.addEventListener("change", updateFeatures);
-    updateTitle();
+    updateAboutTitle();
+    updateAboutDesc();
     updateFeatures();
 
     // Tier buttons
