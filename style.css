@@ -11,6 +11,7 @@
 h1 {
     font-size: 54px;
     font-weight: 700; /* Bold */
+    line-height: 1.6em;
 }
 
 h1.medium {
@@ -40,17 +41,6 @@ h5 {
 h6 {
     font-size: 16px;
     font-weight: 500; /* Medium */
-}
-
-/* CTA Buttons */
-.cta-large {
-    font-size: 20px;
-    font-weight: 700; /* Bold */
-}
-
-.cta-medium {
-    font-size: 18px;
-    font-weight: 600; /* SemiBold */
 }
 
 /* Paragraph Styles */
@@ -153,4 +143,40 @@ section.pricing {
 .pricing > .container {
     width: 80%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pricing .pricing-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.pricing .p2 {
+    color: #696774;
+}
+
+.pricing .p1 {
+    color: #1e1e1e;
+}
+
+.pricing .descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pricing select.class-type {
+    border: 2px solid red;
+    padding: 2rem;
+    background-color: white;
+}
+
+/* pricing right */
+.pricing .pricing-right {
+    width: 50%;
+    background-color: #f7f4ee;
+    border: 1px solid #dbdbde;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
