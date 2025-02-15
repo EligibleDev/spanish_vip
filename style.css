@@ -233,3 +233,65 @@ section.pricing {
     font-weight: 600;
     margin-bottom: 1rem;
 }
+
+.pricing .plan {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: #1e1e1e;
+    border: 2px solid #d9d9d9;
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 1.5rem;
+}
+
+.plan .plan-title {
+    display: flex;
+    gap: 1.5rem;
+    text-align: left;
+    align-items: center;
+}
+
+.plan .circle {
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    box-sizing: border-box;
+    border: 2px solid #d9d9d9;
+    border-radius: 50%;
+}
+
+.plan .p2 {
+    padding-top: 0.5rem;
+    color: #1e1e1e;
+    font-weight: 600;
+}
+
+.plan-price {
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plan-price .p3 {
+    color: #696774;
+    font-weight: 500;
+    margin: 1rem 0px 0px -1rem;
+}
+
+.plan .plan-discount {
+    height: 2rem;
+    width: 5.7rem;
+    background: linear-gradient(180deg, #fc612c 0%, #f8c69f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1.17455px 2.34909px rgba(16, 24, 40, 0.05);
+    /* padding: 8px 16px; */
+    border-radius: 32px;
+    color: white;
+}
