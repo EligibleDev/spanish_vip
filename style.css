@@ -1,0 +1,156 @@
+/* global styles */
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Kumbh Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Headings - Desktop */
+h1 {
+    font-size: 54px;
+    font-weight: 700; /* Bold */
+}
+
+h1.medium {
+    font-weight: 500; /* Medium */
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 700; /* Bold */
+}
+
+h3 {
+    font-size: 36px;
+    font-weight: 600; /* SemiBold */
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 500; /* Medium */
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 600; /* SemiBold */
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 500; /* Medium */
+}
+
+/* CTA Buttons */
+.cta-large {
+    font-size: 20px;
+    font-weight: 700; /* Bold */
+}
+
+.cta-medium {
+    font-size: 18px;
+    font-weight: 600; /* SemiBold */
+}
+
+/* Paragraph Styles */
+p {
+    margin-bottom: 1rem;
+}
+
+.p1 {
+    font-size: 20px;
+    font-weight: 500; /* Medium */
+}
+
+.p2 {
+    font-size: 18px;
+    font-weight: 400; /* Regular */
+}
+
+.p2.bold {
+    font-weight: 600; /* SemiBold */
+}
+
+.p3 {
+    font-size: 16px;
+    font-weight: 400; /* Regular */
+}
+
+.p4 {
+    font-size: 14px;
+    font-weight: 400; /* Regular */
+}
+
+.p4.bold {
+    font-weight: 600; /* SemiBold */
+}
+
+.p5 {
+    font-size: 12px;
+    font-weight: 400; /* Regular */
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+        font-weight: 700; /* Bold */
+    }
+
+    h1.medium {
+        font-size: 36px;
+        font-weight: 500; /* Medium */
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: 700; /* Bold */
+    }
+
+    h3 {
+        font-size: 28px;
+        font-weight: 600; /* SemiBold */
+    }
+
+    h5 {
+        font-size: 18px;
+        font-weight: 600; /* SemiBold */
+    }
+
+    h6 {
+        font-size: 14px;
+        font-weight: 500; /* Medium */
+    }
+
+    .p1 {
+        font-size: 18px;
+    }
+
+    .p2 {
+        font-size: 16px;
+    }
+
+    .p3 {
+        font-size: 14px;
+    }
+
+    .p4 {
+        font-size: 12px;
+    }
+
+    .p5 {
+        font-size: 10px;
+    }
+}
+
+/* pricing section */
+section.pricing {
+    background-color: ;
+    padding: 100px 0px 50px;
+}
+
+.pricing > .container {
+    width: 80%;
+    margin: auto;
+}
