@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const featuresContainer = document.getElementById("features");
     const aboutTitle = document.getElementById("aboutTitle");
     const aboutDesc = document.getElementById("aboutDesc");
+    const tierButtons = document.querySelectorAll(".membership-tier button");
 
     function updateFeatures() {
         let features = [
@@ -46,15 +47,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }`;
     }
 
-    classType.addEventListener("change", updateAboutTitle);
-    classType.addEventListener("change", updateAboutDesc);
-    classType.addEventListener("change", updateFeatures);
-    updateAboutTitle();
-    updateAboutDesc();
-    updateFeatures();
+    //tier buttons
+    const cheapButton = tierButtons[0];
+    const costlyButton = tierButtons[1];
 
-    // Tier buttons
-    const tierButtons = document.querySelectorAll(".membership-tier button");
+    function updateTierButtons() {
+        if (classType.value === "group-classes") {
+            cheapButton.firstElementChild.innerHTML = "Lite";
+            cheapButton.lastElementChild.innerHTML = "Join up to 10 classes per month";
+            costlyButton.firstElementChild.innerHTML = "Unlimited";
+            costlyButton.lastElementChild.innerHTML = "Take as many classes as you want";
+        } else {
+            cheapButton.firstElementChild.innerHTML = "Standard";
+            cheapButton.lastElementChild.innerHTML =
+                "Engaging 1:1 tutoring, up to 3 classes per week.";
+            costlyButton.firstElementChild.innerHTML = "Plus";
+            costlyButton.lastElementChild.innerHTML =
+                "Increased personalization, up to 5 classes per week.";
+        }
+    }
+
+    // Tier buttons actions
 
     tierButtons.forEach((button) => {
         button.addEventListener("click", function () {
@@ -65,4 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("active");
         });
     });
+
+    classType.addEventListener("change", updateAboutTitle);
+    classType.addEventListener("change", updateAboutDesc);
+    classType.addEventListener("change", updateFeatures);
+    classType.addEventListener("change", updateTierButtons);
+    updateAboutTitle();
+    updateAboutDesc();
+    updateFeatures();
+    updateTierButtons();
 });

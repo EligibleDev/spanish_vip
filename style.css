@@ -198,6 +198,7 @@ section.pricing {
 }
 
 .pricing .membership-tier button {
+    width: 50%;
     text-align: left;
     line-height: 2em;
     color: #696774;
