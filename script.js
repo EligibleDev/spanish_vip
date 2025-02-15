@@ -1,9 +1,51 @@
-const tierButton = document.querySelectorAll(".membership-tier button");
+document.addEventListener("DOMContentLoaded", function () {
+    // Subscription types
+    const classType = document.getElementById("classType");
+    const featuresContainer = document.getElementById("features");
 
-tierButton.forEach((button) => {
-    button.addEventListener("click", function () {
-        tierButton.forEach((btn) => btn.classList.remove("active"));
+    function updateFeatures() {
+        let features = [
+            "Get matched with your perfect tutor",
+            "Set classes around your schedule",
+            "Personalized for your needs and level",
+        ];
 
-        this.classList.add("active");
+        if (classType.value === "group-classes") {
+            features = [
+                "Interactive classes for all levels",
+                "300+ class topics to choose from",
+                "Learn with a global community",
+            ];
+        }
+
+        featuresContainer.innerHTML = features
+            .map(
+                (feature) => `
+              <figure>
+                  <img src="./assets/tick-icon.png" alt="✓" />
+                  <p class="p2">${feature}</p>
+              </figure>
+          `
+            )
+            .join("");
+    }
+
+    // Call it once to set initial features
+    updateFeatures();
+
+    // Listen for changes in the dropdown
+    classType.addEventListener("change", updateFeatures);
+
+    // Tier buttons
+    const tierButtons = document.querySelectorAll(".membership-tier button");
+
+    tierButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            // Remove 'active' class from all buttons
+            tierButtons.forEach((btn) => btn.classList.remove("active"));
+
+            // Add 'active' class to the clicked button
+            this.classList.add("active");
+        });
     });
 });
