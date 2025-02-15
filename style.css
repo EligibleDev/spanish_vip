@@ -203,16 +203,21 @@ section.pricing {
     color: #696774;
     background: #ffffff;
     padding: 1.5rem;
+    border: 2px solid #999999;
     padding-bottom: 2rem;
-    border: 2px solid #ff5913;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
     border-radius: 16px;
+    cursor: pointer;
 }
 
-.membership-tier h5 {
+.membership-tier button h5 {
     margin-bottom: 1rem;
     line-height: inherit;
     color: #1e1e1e;
+}
+
+.membership-tier button.active {
+    border: 2px solid #ff5913;
 }
 
 /* pricing right */
