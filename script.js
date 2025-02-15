@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Subscription types
     const classType = document.getElementById("classType");
     const featuresContainer = document.getElementById("features");
+    const aboutTitle = document.getElementById("aboutTitle");
 
     function updateFeatures() {
         let features = [
@@ -30,11 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
             .join("");
     }
 
-    // Call it once to set initial features
-    updateFeatures();
+    function updateTitle() {
+        aboutTitle.innerText = `About ${
+            classType.value === "group-classes" ? "group classes" : "private tutoring"
+        }:`;
+    }
 
-    // Listen for changes in the dropdown
+    classType.addEventListener("change", updateTitle);
     classType.addEventListener("change", updateFeatures);
+    updateTitle();
+    updateFeatures();
 
     // Tier buttons
     const tierButtons = document.querySelectorAll(".membership-tier button");
