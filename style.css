@@ -7,6 +7,10 @@
     font-style: normal;
 }
 
+del {
+    color: #a6a4af;
+}
+
 /* Headings - Desktop */
 .bold {
     font-weight: 700;
@@ -267,6 +271,7 @@ section.pricing {
     padding-top: 0.5rem;
     color: #1e1e1e;
     font-weight: 600;
+    display: inline;
 }
 
 .plan-price {
@@ -277,10 +282,31 @@ section.pricing {
     gap: 1rem;
 }
 
+.plan-price > div {
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+#threeMonths .plan-price > div,
+#sixMonths .plan-price > div {
+    text-align: left;
+    display: block;
+    width: 52%;
+}
+
 .plan-price .p3 {
     color: #696774;
     font-weight: 500;
     margin: 1rem 0px 0px -1rem;
+}
+
+#threeMonths .p3,
+#sixMonths .p3 {
+    margin: 0rem;
+    display: inline-block;
 }
 
 .plan .plan-discount {
@@ -291,7 +317,10 @@ section.pricing {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 1.17455px 2.34909px rgba(16, 24, 40, 0.05);
-    /* padding: 8px 16px; */
     border-radius: 32px;
     color: white;
+}
+
+#sixMonths .plan-discount {
+    background: linear-gradient(2.79deg, #1dd3b0 36.07%, #03ad8c 66.55%);
 }
