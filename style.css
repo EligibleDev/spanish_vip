@@ -324,3 +324,31 @@ section.pricing {
 #sixMonths .plan-discount {
     background: linear-gradient(2.79deg, #1dd3b0 36.07%, #03ad8c 66.55%);
 }
+
+.pricing-right .buy {
+    cursor: pointer;
+    width: 100%;
+    background-color: #ff5913;
+    border-radius: 50px;
+    border: 0px;
+    padding: 1rem 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+}
+
+.pricing .ssl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ssl .p3 {
+    margin: 0px;
+    color: #4a525e;
+}
