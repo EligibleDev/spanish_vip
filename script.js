@@ -5,6 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutTitle = document.getElementById("aboutTitle");
     const aboutDesc = document.getElementById("aboutDesc");
     const tierButtons = document.querySelectorAll(".membership-tier button");
+    const cheapButton = tierButtons[0];
+    const costlyButton = tierButtons[1];
+    const monthlyPrice = document.querySelector("#monthly .plan-title .p2").textContent;
+    const monthlyDiscount = document.querySelector(
+        "#monthly .plan-price .p2"
+    ).textContent;
+
+    //evabe shobgulor value niye. even onujayi change korte hobe
+    const threeMonths = document.getElementById("threeMonths");
+    const sixMonths = document.getElementById("sixMonths");
+
+    console.log(monthlyDiscount, monthlyPrice);
 
     function updateFeatures() {
         let features = [
@@ -48,9 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //tier buttons
-    const cheapButton = tierButtons[0];
-    const costlyButton = tierButtons[1];
-
     function updateTierButtons() {
         if (classType.value === "group-classes") {
             cheapButton.firstElementChild.innerHTML = "Lite";
@@ -68,13 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Tier buttons actions
-
     tierButtons.forEach((button) => {
         button.addEventListener("click", function () {
-            // Remove 'active' class from all buttons
             tierButtons.forEach((btn) => btn.classList.remove("active"));
-
-            // Add 'active' class to the clicked button
             this.classList.add("active");
         });
     });
