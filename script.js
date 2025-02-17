@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const tierButtons = document.querySelectorAll(".membership-tier button");
     const cheapButton = tierButtons[0];
     const costlyButton = tierButtons[1];
-    const isCheap = cheapButton.classList.contains("active");
     //plan values
     const monthlyPrice = document.querySelector("#monthly .plan-title .p2 span");
     const monthlyPricePerClass = document.querySelector("#monthly .plan-price .p2");
@@ -87,10 +86,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //updating the plans
     function updatePlans() {
-        const priceElement = document.querySelector("#monthly .plan-title .p2 span");
+        const isCheap = cheapButton.classList.contains("active");
+        const isCostly = costlyButton.classList.contains("active");
+        const classDividers = document.querySelectorAll(".plan .plan-price .p3");
 
         if (classType.value === "group-classes" && isCheap) {
             monthlyPrice.textContent = "$99";
+            monthlyPricePerClass.textContent = "$9.90";
+
+            threeMonthsPrice.textContent = "$249";
+            threeMonthsPricePerClass.textContent = "$8.30";
+            threeMonthsDiscount.textContent = "$297";
+            threeMonthsDiscountPerClass.textContent = "$9.90 /class";
+
+            sixMonthsPrice.textContent = "$399";
+            sixMonthsPricePerClass.textContent = "$6.65";
+            sixMonthsDiscount.textContent = "$594";
+            sixMonthsDiscountPerClass.textContent = "$9.90 /class";
+
+            classDividers.forEach((divider) => (divider.style.display = "inline-block"));
+        } else if (classType.value === "group-classes" && isCostly) {
+            monthlyPrice.textContent = "$149";
+            monthlyPricePerClass.textContent = "Unlimited";
+
+            threeMonthsPrice.textContent = "$349";
+            threeMonthsPricePerClass.textContent = "Unlimited";
+            threeMonthsDiscount.textContent = "$447";
+            threeMonthsDiscountPerClass.textContent = "";
+
+            sixMonthsPrice.textContent = "$599";
+            sixMonthsPricePerClass.textContent = "Unlimited";
+            sixMonthsDiscount.textContent = "$894";
+            sixMonthsDiscountPerClass.textContent = "";
+
+            classDividers.forEach((divider) => (divider.style.display = "none"));
+        } else if (classType.value === "private-tutoring" && isCheap) {
+            monthlyPrice.textContent = "$199";
+            monthlyPricePerClass.textContent = "$16.60";
+
+            threeMonthsPrice.textContent = "$499";
+            threeMonthsPricePerClass.textContent = "$13.90";
+            threeMonthsDiscount.textContent = "$597";
+            threeMonthsDiscountPerClass.textContent = "$16.60 /class";
+
+            sixMonthsPrice.textContent = "$799";
+            sixMonthsPricePerClass.textContent = "$11.10";
+            sixMonthsDiscount.textContent = "$11,94";
+            sixMonthsDiscountPerClass.textContent = "$16.60 /class";
+
+            classDividers.forEach((divider) => (divider.style.display = "inline-block"));
+        } else if (classType.value === "private-tutoring" && isCostly) {
+            monthlyPrice.textContent = "$299";
+            monthlyPricePerClass.textContent = "$14.95";
+
+            threeMonthsPrice.textContent = "$749";
+            threeMonthsPricePerClass.textContent = "$12.48";
+            threeMonthsDiscount.textContent = "$897";
+            threeMonthsDiscountPerClass.textContent = "$14.95 /class";
+
+            sixMonthsPrice.textContent = "$1249";
+            sixMonthsPricePerClass.textContent = "$10.40";
+            sixMonthsDiscount.textContent = "$17,94";
+            sixMonthsDiscountPerClass.textContent = "$14.95 /class";
+
+            classDividers.forEach((divider) => (divider.style.display = "inline-block"));
         }
     }
 
@@ -106,13 +165,11 @@ document.addEventListener("DOMContentLoaded", function () {
     classType.addEventListener("change", updateAboutTitle);
     classType.addEventListener("change", updateAboutDesc);
     classType.addEventListener("change", updateFeatures);
-    classType.addEventListener("change", updatePlans);
     classType.addEventListener("change", updateTierButtons);
-    classType.addEventListener("change", console.log(monthlyPrice));
+    classType.addEventListener("change", updatePlans);
     updateAboutTitle();
     updateAboutDesc();
     updateFeatures();
-    updatePlans();
     updateTierButtons();
-    console.log(monthlyPrice);
+    updatePlans();
 });

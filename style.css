@@ -275,7 +275,7 @@ section.pricing {
 }
 
 .plan-price {
-    width: 45%;
+    width: 47%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -283,7 +283,7 @@ section.pricing {
 }
 
 .plan-price > div {
-    width: 45%;
+    width: 47%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -292,7 +292,7 @@ section.pricing {
 
 #threeMonths .plan-price > div,
 #sixMonths .plan-price > div {
-    text-align: left;
+    text-align: center;
     display: block;
     width: 52%;
 }
