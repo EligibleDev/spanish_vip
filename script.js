@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cheapButton = tierButtons[0];
     const costlyButton = tierButtons[1];
     const planButtons = document.querySelectorAll("button.plan");
+    const link = document.getElementById("buy");
     //plan values
     const monthlyPrice = document.querySelector("#monthly .plan-title .p2 span");
     const monthlyPricePerClass = document.querySelector("#monthly .plan-price .p2");

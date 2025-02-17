@@ -133,7 +133,8 @@ h6 {
 
 /* pricing section */
 section.pricing {
-    padding: 100px 0px;
+    position: relative;
+    padding: 100px 0px 4rem;
 }
 
 .pricing > .container {
@@ -142,6 +143,17 @@ section.pricing {
     display: flex;
     justify-content: space-between;
     gap: 4rem;
+}
+
+.pricing .pricing-heading {
+    position: relative;
+}
+
+.pricing .pricing-heading::before {
+    content: url("./assets/shape-1.png");
+    position: absolute;
+    top: -3rem;
+    left: -5rem;
 }
 
 .pricing .pricing-left {
@@ -192,8 +204,16 @@ section.pricing {
 
 .pricing .membership-tier {
     display: flex;
+    position: relative;
     justify-content: space-between;
     gap: 1.25rem;
+}
+
+.pricing .membership-tier::before {
+    content: url("./assets/shape-2.png");
+    position: absolute;
+    top: -1.5rem;
+    left: -2rem;
 }
 
 .pricing .membership-tier button {
@@ -223,6 +243,17 @@ section.pricing {
 /* pricing right */
 .pricing .pricing-right {
     width: 50%;
+    position: relative;
+}
+
+.pricing .pricing-right::before {
+    content: url("./assets/shape-3.png");
+    position: absolute;
+    bottom: 1.5rem;
+    right: -3rem;
+}
+
+.pricing .plans-box {
     border-radius: 1.5rem;
     background: #f7f4ee;
     border: 1px solid #dbdbde;
@@ -233,7 +264,7 @@ section.pricing {
     gap: 2rem;
 }
 
-.pricing-right .p3 {
+.plans-box .p3 {
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -285,7 +316,7 @@ section.pricing {
 }
 
 .plan-price {
-    width: 47%;
+    width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -293,7 +324,7 @@ section.pricing {
 }
 
 .plan-price > div {
-    width: 47%;
+    width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -339,7 +370,7 @@ section.pricing {
     border: 2px solid #ff5913;
 }
 
-.pricing-right .buy {
+.plans-box .buy {
     cursor: pointer;
     width: 100%;
     background-color: #ff5913;
@@ -365,4 +396,12 @@ section.pricing {
 .ssl .p3 {
     margin: 0px;
     color: #4a525e;
+}
+
+.pricing .review {
+    padding: 2.5rem 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
