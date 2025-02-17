@@ -7,17 +7,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const tierButtons = document.querySelectorAll(".membership-tier button");
     const cheapButton = tierButtons[0];
     const costlyButton = tierButtons[1];
-    const monthlyPrice = document.querySelector("#monthly .plan-title .p2").textContent;
-    const monthlyDiscount = document.querySelector(
-        "#monthly .plan-price .p2"
-    ).textContent;
+    const isCheap = cheapButton.classList.contains("active");
+    //plan values
+    const monthlyPrice = document.querySelector("#monthly .plan-title .p2 span");
+    const monthlyPricePerClass = document.querySelector("#monthly .plan-price .p2");
+    const threeMonthsPrice = document.querySelector("#threeMonths .plan-title .p2 span");
+    const threeMonthsPricePerClass = document.querySelector(
+        "#threeMonths .plan-price .p2"
+    );
+    const threeMonthsDiscount = document.querySelector("#threeMonths .plan-title del");
+    const threeMonthsDiscountPerClass = document.querySelector(
+        "#threeMonths .plan-price del"
+    );
+    const sixMonthsPrice = document.querySelector("#sixMonths .plan-title .p2 span");
+    const sixMonthsPricePerClass = document.querySelector("#sixMonths .plan-price .p2");
+    const sixMonthsDiscount = document.querySelector("#sixMonths .plan-title del");
+    const sixMonthsDiscountPerClass = document.querySelector(
+        "#sixMonths .plan-price del"
+    );
 
-    //evabe shobgulor value niye. even onujayi change korte hobe
-    const threeMonths = document.getElementById("threeMonths");
-    const sixMonths = document.getElementById("sixMonths");
-
-    console.log(monthlyDiscount, monthlyPrice);
-
+    //description
     function updateFeatures() {
         let features = [
             "Get matched with your perfect tutor",
@@ -36,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
         featuresContainer.innerHTML = features
             .map(
                 (feature) => `
-              <figure>
-                  <img src="./assets/tick-icon.png" alt="✓" />
+            <figure>
+            <img src="./assets/tick-icon.png" alt="✓" />
                   <p class="p2">${feature}</p>
               </figure>
           `
@@ -76,20 +85,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    //updating the plans
+    function updatePlans() {
+        const priceElement = document.querySelector("#monthly .plan-title .p2 span");
+
+        if (classType.value === "group-classes" && isCheap) {
+            monthlyPrice.textContent = "$99";
+        }
+    }
+
     // Tier buttons actions
     tierButtons.forEach((button) => {
         button.addEventListener("click", function () {
             tierButtons.forEach((btn) => btn.classList.remove("active"));
             this.classList.add("active");
+            updatePlans();
         });
     });
 
     classType.addEventListener("change", updateAboutTitle);
     classType.addEventListener("change", updateAboutDesc);
     classType.addEventListener("change", updateFeatures);
+    classType.addEventListener("change", updatePlans);
     classType.addEventListener("change", updateTierButtons);
+    classType.addEventListener("change", console.log(monthlyPrice));
     updateAboutTitle();
     updateAboutDesc();
     updateFeatures();
+    updatePlans();
     updateTierButtons();
+    console.log(monthlyPrice);
 });
