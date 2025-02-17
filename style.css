@@ -251,6 +251,11 @@ section.pricing {
     padding: 1.5rem;
 }
 
+.pricing .plan:hover {
+    border: 2px solid #ff5913;
+    transition: 0.25s;
+}
+
 .plan .plan-title {
     display: flex;
     gap: 1.5rem;
@@ -265,6 +270,11 @@ section.pricing {
     box-sizing: border-box;
     border: 2px solid #d9d9d9;
     border-radius: 50%;
+}
+
+.plan.selected .circle {
+    border: 0.5rem solid #ff5913;
+    transition: 0.25s;
 }
 
 .plan .p2 {
@@ -323,6 +333,10 @@ section.pricing {
 
 #sixMonths .plan-discount {
     background: linear-gradient(2.79deg, #1dd3b0 36.07%, #03ad8c 66.55%);
+}
+
+.pricing .plan.selected {
+    border: 2px solid #ff5913;
 }
 
 .pricing-right .buy {

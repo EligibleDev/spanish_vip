@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tierButtons = document.querySelectorAll(".membership-tier button");
     const cheapButton = tierButtons[0];
     const costlyButton = tierButtons[1];
+    const planButtons = document.querySelectorAll("button.plan");
     //plan values
     const monthlyPrice = document.querySelector("#monthly .plan-title .p2 span");
     const monthlyPricePerClass = document.querySelector("#monthly .plan-price .p2");
@@ -159,6 +160,14 @@ document.addEventListener("DOMContentLoaded", function () {
             tierButtons.forEach((btn) => btn.classList.remove("active"));
             this.classList.add("active");
             updatePlans();
+        });
+    });
+
+    //plan button actions
+    planButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            planButtons.forEach((btn) => btn.classList.remove("selected"));
+            this.classList.add("selected");
         });
     });
 
