@@ -139,6 +139,7 @@ section.pricing {
 
 .pricing > .container {
     width: 80%;
+    max-width: 1180px;
     margin: auto;
     display: flex;
     justify-content: space-between;
