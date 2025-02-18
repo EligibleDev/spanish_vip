@@ -113,15 +113,15 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (classType.value === "group-classes" && isCheap && isMonthly) {
             link.href = "#g-c-1";
         } else if (classType.value === "group-classes" && isCheap && isThreeMonths) {
-            link.href = "g-c-2";
+            link.href = "#g-c-2";
         } else if (classType.value === "group-classes" && isCheap && isSixMonths) {
-            link.href = "g-c-3";
+            link.href = "#g-c-3";
         } else if (classType.value === "group-classes" && isCostly && isMonthly) {
             link.href = "#g-e-1";
         } else if (classType.value === "group-classes" && isCostly && isThreeMonths) {
-            link.href = "g-e-2";
+            link.href = "#g-e-2";
         } else if (classType.value === "group-classes" && isCostly && isSixMonths) {
-            link.href = "g-e-3";
+            link.href = "#g-e-3";
         }
     }
 
