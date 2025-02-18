@@ -137,7 +137,7 @@ section.pricing {
     padding: 100px 0px 4rem;
 }
 
-.pricing > .container {
+.pricing .container {
     width: 80%;
     max-width: 1180px;
     margin: auto;

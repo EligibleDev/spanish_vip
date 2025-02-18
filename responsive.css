@@ -1,0 +1,82 @@
+@media screen and (max-width: 1040px) {
+    .pricing .container {
+        flex-direction: column;
+    }
+
+    .pricing .pricing-left {
+        width: 100%;
+    }
+
+    .pricing .pricing-right {
+        width: 100%;
+    }
+
+    #threeMonths .plan-price > div,
+    #sixMonths .plan-price > div {
+        text-align: left;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pricing .pricing-heading::before {
+        content: url("./assets/shape-1.png");
+        position: absolute;
+        top: -1rem;
+        right: 0rem;
+        left: auto;
+    }
+
+    .pricing #aboutDesc.p2 {
+        line-height: 1.5em;
+    }
+
+    .pricing .membership-tier::before {
+        top: -2rem;
+        left: 0px;
+    }
+
+    .pricing .pricing-right::before {
+        bottom: -1rem;
+        right: 0px;
+    }
+
+    .pricing .plans-box .p3.bold {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .pricing .container {
+        width: 90%;
+    }
+
+    .pricing .plan-price {
+        justify-content: flex-end;
+    }
+
+    .pricing .plan-price > div {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .pricing .membership-tier button .p3 {
+        line-height: 1.5em;
+    }
+
+    .pricing .plans-box {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .pricing .plan {
+        padding: 1.2rem;
+    }
+
+    .pricing .plan-price {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+}
