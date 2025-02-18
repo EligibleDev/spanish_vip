@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const cheapButton = tierButtons[0];
     const costlyButton = tierButtons[1];
     const planButtons = document.querySelectorAll("button.plan");
+    const monthlyButton = document.getElementById("monthly");
+    const threeMonthsButton = document.getElementById("threeMonths");
+    const sixMonthsButton = document.getElementById("sixMonths");
     const link = document.getElementById("buy");
     //plan values
     const monthlyPrice = document.querySelector("#monthly .plan-title .p2 span");
@@ -86,6 +89,42 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    //updating the link
+    function updateLink() {
+        const isCostly = costlyButton.classList.contains("active");
+        const isCheap = cheapButton.classList.contains("active");
+
+        const isMonthly = monthlyButton.classList.contains("selected");
+        const isThreeMonths = threeMonthsButton.classList.contains("selected");
+        const isSixMonths = sixMonthsButton.classList.contains("selected");
+
+        if (classType.value === "private-tutoring" && isCheap && isMonthly) {
+            link.href = "#p-c-1";
+        } else if (classType.value === "private-tutoring" && isCheap && isThreeMonths) {
+            link.href = "#p-c-2";
+        } else if (classType.value === "private-tutoring" && isCheap && isSixMonths) {
+            link.href = "#p-c-3";
+        } else if (classType.value === "private-tutoring" && isCostly && isMonthly) {
+            link.href = "#p-e-1";
+        } else if (classType.value === "private-tutoring" && isCostly && isThreeMonths) {
+            link.href = "#p-e-2";
+        } else if (classType.value === "private-tutoring" && isCostly && isSixMonths) {
+            link.href = "#p-e-3";
+        } else if (classType.value === "group-classes" && isCheap && isMonthly) {
+            link.href = "#g-c-1";
+        } else if (classType.value === "group-classes" && isCheap && isThreeMonths) {
+            link.href = "g-c-2";
+        } else if (classType.value === "group-classes" && isCheap && isSixMonths) {
+            link.href = "g-c-3";
+        } else if (classType.value === "group-classes" && isCostly && isMonthly) {
+            link.href = "#g-e-1";
+        } else if (classType.value === "group-classes" && isCostly && isThreeMonths) {
+            link.href = "g-e-2";
+        } else if (classType.value === "group-classes" && isCostly && isSixMonths) {
+            link.href = "g-e-3";
+        }
+    }
+
     //updating the plans
     function updatePlans() {
         const isCheap = cheapButton.classList.contains("active");
@@ -160,6 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             tierButtons.forEach((btn) => btn.classList.remove("active"));
             this.classList.add("active");
+            updateLink();
             updatePlans();
         });
     });
@@ -169,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             planButtons.forEach((btn) => btn.classList.remove("selected"));
             this.classList.add("selected");
+            updateLink();
         });
     });
 
@@ -176,10 +217,12 @@ document.addEventListener("DOMContentLoaded", function () {
     classType.addEventListener("change", updateAboutDesc);
     classType.addEventListener("change", updateFeatures);
     classType.addEventListener("change", updateTierButtons);
+    classType.addEventListener("change", updateLink);
     classType.addEventListener("change", updatePlans);
     updateAboutTitle();
     updateAboutDesc();
     updateFeatures();
     updateTierButtons();
+    updateLink();
     updatePlans();
 });
