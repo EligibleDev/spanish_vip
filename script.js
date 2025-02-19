@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .map(
                 (feature) => `
             <figure>
-            <img src="./assets/tick-icon.png" alt="✓" />
+            <img src="https://spanishvip.com/wp-content/uploads/2025/02/tick-icon.png" alt="✓" />
                   <p class="p2">${feature}</p>
               </figure>
           `

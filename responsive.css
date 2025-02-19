@@ -1,6 +1,7 @@
 @media screen and (max-width: 1040px) {
     .pricing .container {
         flex-direction: column;
+        gap: 4rem;
     }
 
     .pricing .pricing-left {
@@ -9,6 +10,7 @@
 
     .pricing .pricing-right {
         width: 100%;
+        margin-left: 0px;
     }
 
     #threeMonths .plan-price > div,
@@ -20,8 +22,6 @@
 
 @media screen and (max-width: 768px) {
     .pricing .pricing-heading::before {
-        content: url("./assets/shape-1.png");
-        position: absolute;
         top: -1rem;
         right: 0rem;
         left: auto;
